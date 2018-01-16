@@ -10,14 +10,14 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "sshlogin" is now active!');
+    console.log('Congratulations, your extension "SSH Terminal" is now active!');
 
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.sshlogin', () => {
+    let disposable = vscode.commands.registerCommand('extension.ssh-terminal', () => {
 
-        let config = vscode.workspace.getConfiguration('sshlogin');
+        let config = vscode.workspace.getConfiguration('ssh-terminal');
 
         const connections = config.get<config[]>('connection');
 
@@ -39,7 +39,7 @@ export function activate(context: vscode.ExtensionContext) {
             if (choiseMap[val]) {
                 const terminal = vscode.window.createTerminal();
                 terminal.show();
-                let command = "ssh " + "-i " + choiseMap[val].pubkeyfile + " " + choiseMap[val].user + "@" + choiseMap[val].host + " -p " + choiseMap[val].port;
+                let command = "ssh " + "-i " + choiseMap[val].keyfile + " " + choiseMap[val].user + "@" + choiseMap[val].host + " -p " + choiseMap[val].port;
 
                 terminal.sendText(command);
             }
