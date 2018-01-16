@@ -1,5 +1,5 @@
 {
-    "name": "ssh-terminal-login",
+    "name": "SSH Terminal Login",
     "displayName": "ssh-terminal-login",
     "description": "Define a list of servers to SSH to.",
     "version": "0.0.6",
