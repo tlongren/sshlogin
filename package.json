@@ -1,6 +1,6 @@
 {
-    "name": "SSH Terminal Login",
-    "displayName": "ssh-terminal-login",
+    "name": "ssh-terminal",
+    "displayName": "ssh-terminal",
     "description": "Define a list of servers to SSH to.",
     "version": "0.0.6",
     "publisher": "tlongren",
@@ -37,13 +37,13 @@
     "contributes": {
         "commands": [
             {
-                "command": "extension.ssh-terminal-login",
-                "title": "ssh-terminal-login"
+                "command": "extension.ssh-terminal",
+                "title": "ssh-terminal"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "SSH Terminal Login",
+            "title": "SSH Terminal",
             "properties": {
                 "sshlogin.connection": {
                     "type": "array",
