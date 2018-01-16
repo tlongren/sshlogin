@@ -1,9 +1,9 @@
 {
-    "name": "sshlogin",
-    "displayName": "sshlogin",
-    "description": "auto login by ssh",
-    "version": "0.0.5",
-    "publisher": "seanchann",
+    "name": "ssh-terminal-login",
+    "displayName": "ssh-terminal-login",
+    "description": "Define a list of servers to SSH to.",
+    "version": "0.0.6",
+    "publisher": "tlongren",
     "engines": {
         "vscode": "^1.14.0"
     },
@@ -11,41 +11,43 @@
         "Other"
     ],
     "author": {
-        "email": "seanchann.zhou@gmail.com",
-        "name": "seanchann zhou"
+        "email": "tlongren@gmail.com",
+        "name": "Tyler Longren"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/seanchann/sshlogin"
+        "url": "https://github.com/tlongren/sshlogin"
     },
     "bugs": {
-        "url": "https://github.com/seanchann/sshlogin/issues",
-        "email": "seanchann.zhou@gmail.com"
+        "url": "https://github.com/tlongren/sshlogin/issues",
+        "email": "tlongren@gmail.com"
     },
     "keywords": [
         "ssh",
-        "login"
+        "login",
+        "terminal",
+        "utility"
     ],
     "activationEvents": [
-        "onCommand:extension.sshlogin"
+        "onCommand:extension.ssh-terminal-login"
     ],
-    "homepage": "https://github.com/seanchann/sshlogin",
+    "homepage": "https://github.com/tlongren/sshlogin",
     "icon": "images/logo.jpg",
     "main": "./out/src/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sshlogin",
-                "title": "sshlogin"
+                "command": "extension.ssh-terminal-login",
+                "title": "ssh-terminal-login"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "SSHLogin",
+            "title": "SSH Terminal Login",
             "properties": {
                 "sshlogin.connection": {
                     "type": "array",
-                    "description": "The connection information required to log in.",
+                    "description": "Required SSH connection info.",
                     "properties": {
                         "items": {
                             "type": "object",
@@ -54,27 +56,27 @@
                                 "name": {
                                     "type": "string",
                                     "default": "con1",
-                                    "description": "the name of connection"
+                                    "description": "Connection Name"
                                 },
                                 "user": {
                                     "type": "string",
                                     "default": "root",
-                                    "description": "username"
+                                    "description": "Username"
                                 },
                                 "host": {
                                     "type": "string",
                                     "default": "localhost",
-                                    "description": "host name for this connection"
+                                    "description": "Connection Hostname/IP"
                                 },
                                 "port": {
                                     "type": "int",
                                     "default": 22,
-                                    "description": "connection port"
+                                    "description": "Connection Port"
                                 },
                                 "keyfile": {
                                     "type": "string",
                                     "default": "~/.ssh/id_rsa",
-                                    "description": "require private key file for ssh login user"
+                                    "description": "Specify private key file if needed"
                                 }
                             }
                         }
